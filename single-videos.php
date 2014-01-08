@@ -23,6 +23,7 @@ get_header(); ?>
 			
 			<!-- #primary .site-content -->
 			<div class="primary site-content ten columns">
+
 				
 				<div role="main" class="content">
 
@@ -52,18 +53,20 @@ get_header(); ?>
 		                ?>
 		            </div><!-- .videothumbs -->
 
-				
 					<?php while ( have_posts() ) : the_post(); ?>
 
-	                	<iframe id="play" src="http://player.vimeo.com/video/<?php the_field('vimeo_id'); ?>" width="100%" height="500" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-		
-						<?php get_template_part( 'content', 'single' ); ?>
-		
-						<?php agility_content_nav( 'nav-below' ); ?>
+						<div class="post-video">
 
-						<!-- Begin After Post sidebar/widget area -->
-						<?php dynamic_sidebar( 'after-post' ); ?>
-						<!-- end After Post sidebar/widget area -->
+		                	<iframe id="play" src="http://player.vimeo.com/video/<?php the_field('vimeo_id'); ?>" width="100%" height="500" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			
+							<?php get_template_part( 'content', 'single' ); ?>
+			
+							<?php agility_content_nav( 'nav-below' ); ?>
+
+							<!-- Begin After Post sidebar/widget area -->
+							<?php dynamic_sidebar( 'after-post' ); ?>
+							<!-- end After Post sidebar/widget area -->
+						</div>
 		
 					<?php endwhile; // end of the loop. ?>
 
